@@ -1,0 +1,248 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(135deg, #0f2818 0%, #1a3d28 100%);
+  color: #f0f0f0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+}
+
+.header {
+  background: linear-gradient(135deg, #0f2818 0%, #1a4d2e 100%);
+  padding: 60px 20px;
+  text-align: center;
+  border-bottom: 3px solid #52b788;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+.logo {
+  font-size: 72px;
+  font-weight: 700;
+  color: #74c69d;
+  letter-spacing: 4px;
+  margin-bottom: 10px;
+  text-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+}
+
+.tagline {
+  font-size: 28px;
+  color: #95d5b2;
+  font-weight: 300;
+  letter-spacing: 1px;
+}
+
+.container {
+  flex: 1;
+  padding: 50px 20px;
+}
+
+.content-wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+}
+
+.form-section,
+.feedback-section {
+  background: rgba(15, 40, 24, 0.6);
+  border-radius: 15px;
+  padding: 35px;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(82, 183, 136, 0.3);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-section:hover,
+.feedback-section:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 40px rgba(82, 183, 136, 0.2);
+  border-color: rgba(82, 183, 136, 0.5);
+}
+
+.section-header {
+  margin-bottom: 30px;
+  border-bottom: 2px solid #52b788;
+  padding-bottom: 15px;
+}
+
+.section-header h2 {
+  font-size: 28px;
+  color: #74c69d;
+  margin-bottom: 8px;
+  font-weight: 600;
+}
+
+.section-description {
+  font-size: 14px;
+  color: #95d5b2;
+  font-weight: 300;
+}
+
+.form-container {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.input-field,
+.textarea-field {
+  background: rgba(26, 61, 40, 0.8);
+  border: 2px solid #52b788;
+  border-radius: 8px;
+  padding: 12px 15px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 14px;
+  color: #f0f0f0;
+  transition: all 0.3s ease;
+  outline: none;
+}
+
+.input-field::placeholder,
+.textarea-field::placeholder {
+  color: #95d5b2;
+  opacity: 0.7;
+}
+
+.input-field:focus,
+.textarea-field:focus {
+  border-color: #74c69d;
+  background: rgba(26, 61, 40, 1);
+  box-shadow: 0 0 10px rgba(116, 198, 157, 0.3);
+}
+
+.textarea-field {
+  resize: vertical;
+  min-height: 120px;
+}
+
+.submit-btn {
+  background: linear-gradient(135deg, #52b788 0%, #74c69d 100%);
+  color: #0f2818;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 10px;
+  box-shadow: 0 5px 15px rgba(82, 183, 136, 0.3);
+  letter-spacing: 0.5px;
+}
+
+.submit-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(82, 183, 136, 0.5);
+  background: linear-gradient(135deg, #74c69d 0%, #52b788 100%);
+}
+
+.submit-btn:active {
+  transform: translateY(0);
+}
+
+.feedback-list {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  max-height: 500px;
+  overflow-y: auto;
+  padding-right: 10px;
+}
+
+.feedback-list::-webkit-scrollbar {
+  width: 8px;
+}
+
+.feedback-list::-webkit-scrollbar-track {
+  background: rgba(82, 183, 136, 0.1);
+  border-radius: 10px;
+}
+
+.feedback-list::-webkit-scrollbar-thumb {
+  background: #52b788;
+  border-radius: 10px;
+}
+
+.feedback-list::-webkit-scrollbar-thumb:hover {
+  background: #74c69d;
+}
+
+.feedback-item {
+  background: rgba(82, 183, 136, 0.1);
+  border-left: 4px solid #52b788;
+  padding: 15px;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+.feedback-item:hover {
+  background: rgba(82, 183, 136, 0.15);
+  border-left-color: #74c69d;
+  transform: translateX(5px);
+}
+
+.feedback-item strong {
+  color: #74c69d;
+  font-size: 15px;
+  display: block;
+  margin-bottom: 8px;
+}
+
+.feedback-item {
+  color: #d9f3dd;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.footer {
+  background: rgba(15, 40, 24, 0.8);
+  padding: 25px 20px;
+  text-align: center;
+  border-top: 2px solid #52b788;
+  margin-top: auto;
+}
+
+.footer p {
+  font-size: 14px;
+  color: #95d5b2;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+}
+
+@media (max-width: 768px) {
+  .content-wrapper {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .logo {
+    font-size: 48px;
+  }
+
+  .tagline {
+    font-size: 20px;
+  }
+
+  .header {
+    padding: 40px 20px;
+  }
+
+  .form-section,
+  .feedback-section {
+    padding: 25px;
+  }
+
+  .section-header h2 {
+    font-size: 22px;
+  }
+}

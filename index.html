@@ -2,21 +2,47 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Student Feedback System</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Student Feedback Portal - STFBP</title>
   <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
 
-  <h1>Student Feedback System</h1>
-
-  <div class="form-container">
-    <input type="text" id="studentName" placeholder="Enter your name">
-    <textarea id="feedback" placeholder="Enter your feedback"></textarea>
-    <button onclick="submitFeedback()">Submit Feedback</button>
+  <div class="header">
+    <h1 class="logo">STFBP</h1>
+    <p class="tagline">Student Feedback Portal</p>
   </div>
 
-  <h2>All Feedback</h2>
-  <div id="feedbackList"></div>
+  <div class="container">
+    <div class="content-wrapper">
+      <div class="form-section">
+        <div class="section-header">
+          <h2>Share Your Feedback</h2>
+          <p class="section-description">Help us improve by sharing your valuable thoughts</p>
+        </div>
+        <div class="form-container">
+          <input type="text" id="studentName" placeholder="Enter your name" class="input-field">
+          <textarea id="feedback" placeholder="Enter your feedback here..." class="textarea-field"></textarea>
+          <button onclick="submitFeedback()" class="submit-btn">Submit Feedback</button>
+        </div>
+      </div>
+
+      <div class="feedback-section">
+        <div class="section-header">
+          <h2>Recent Feedback</h2>
+          <p class="section-description">All submitted feedback from students</p>
+        </div>
+        <div id="feedbackList" class="feedback-list"></div>
+      </div>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <p>DevByHasnat © 2026</p>
+  </footer>
 
   <script src="script.js"></script>
 </body>
