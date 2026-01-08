@@ -41,27 +41,57 @@ jobs:
         with:
           node-version: 18
 
-      # 3️⃣ Install dependencies
-      - name: Install dependencies
+      # 3️⃣ Install root dependencies (if any)
+      - name: Install root dependencies
+        run: npm install --only=prod
+        continue-on-error: true
+
+      # 4️⃣ Install backend dependencies
+      - name: Install backend dependencies
         run: npm install
         working-directory: ./Backend
 
-      # 4️⃣ Wait for MySQL to be ready
+      # 5️⃣ Wait for MySQL to be ready
       - name: Wait for MySQL
         run: |
-          echo "Waiting for MySQL..."
-          for i in {1..10}; do
-            mysqladmin ping -h 127.0.0.1 -u root -p"$DB_PASSWORD" >/dev/null 2>&1 && break
-            echo "MySQL not ready yet..."
-            sleep 5
+          echo "⏳ Waiting for MySQL to be ready..."
+          for i in {1..30}; do
+            if mysqladmin ping -h 127.0.0.1 -u root -p"$DB_PASSWORD" >/dev/null 2>&1; then
+              echo "✅ MySQL is ready!"
+              break
+            fi
+            echo "Attempt $i/30: MySQL not ready yet, waiting..."
+            sleep 2
           done
 
-      # 5️⃣ Run backend tests (if you have any)
-      - name: Run tests
+      # 6️⃣ Create feedback table
+      - name: Setup database
+        run: |
+          echo "🗄️  Setting up database..."
+          mysql -h 127.0.0.1 -u root -p"$DB_PASSWORD" stfbp -e "
+          CREATE TABLE IF NOT EXISTS feedback (
+            id INT AUTO_INCREMENT PRIMARY KEY,
+            student_name VARCHAR(255) NOT NULL,
+            message TEXT NOT NULL,
+            created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+          );"
+          echo "✅ Database table created!"
+
+      # 7️⃣ Run backend tests
+      - name: Run Backend Tests
         run: npm test
         working-directory: ./Backend
 
-      # 6️⃣ Optional: Start server (can be used for integration tests)
-      #- name: Start backend server
-      #  run: node server.js &
-      #  working-directory: ./Backend
+      # 8️⃣ Run root tests
+      - name: Run Root Tests
+        run: npm test
+        continue-on-error: true
+
+      # 9️⃣ Lint check (optional)
+      - name: Check syntax
+        run: node --check Backend/server.js
+        continue-on-error: true
+
+      # 🔟 Build success message
+      - name: Build Complete
+        run: echo "✅ Build completed successfully!"
