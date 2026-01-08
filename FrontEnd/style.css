@@ -6,8 +6,8 @@
 
 body {
   font-family: 'Poppins', sans-serif;
-  background: linear-gradient(135deg, #0f2818 0%, #1a3d28 100%);
-  color: #f0f0f0;
+  background: linear-gradient(135deg, #ffffff 0%, #f0f9f6 100%);
+  color: #1a1a1a;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -15,25 +15,25 @@ body {
 }
 
 .header {
-  background: linear-gradient(135deg, #0f2818 0%, #1a4d2e 100%);
+  background: linear-gradient(135deg, #ffffff 0%, #e8f8f5 100%);
   padding: 60px 20px;
   text-align: center;
   border-bottom: 3px solid #52b788;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 8px 20px rgba(82, 183, 136, 0.15);
 }
 
 .logo {
   font-size: 72px;
   font-weight: 700;
-  color: #74c69d;
+  color: #1e8449;
   letter-spacing: 4px;
   margin-bottom: 10px;
-  text-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+  text-shadow: 0 2px 4px rgba(82, 183, 136, 0.1);
 }
 
 .tagline {
   font-size: 28px;
-  color: #95d5b2;
+  color: #27ae60;
   font-weight: 300;
   letter-spacing: 1px;
 }
@@ -53,12 +53,12 @@ body {
 
 .form-section,
 .feedback-section {
-  background: rgba(15, 40, 24, 0.6);
+  background: #ffffff;
   border-radius: 15px;
   padding: 35px;
   backdrop-filter: blur(10px);
-  border: 1px solid rgba(82, 183, 136, 0.3);
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  border: 2px solid #95d5b2;
+  box-shadow: 0 10px 30px rgba(82, 183, 136, 0.1);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
@@ -66,7 +66,7 @@ body {
 .feedback-section:hover {
   transform: translateY(-5px);
   box-shadow: 0 15px 40px rgba(82, 183, 136, 0.2);
-  border-color: rgba(82, 183, 136, 0.5);
+  border-color: #52b788;
 }
 
 .section-header {
@@ -77,14 +77,14 @@ body {
 
 .section-header h2 {
   font-size: 28px;
-  color: #74c69d;
+  color: #1e8449;
   margin-bottom: 8px;
   font-weight: 600;
 }
 
 .section-description {
   font-size: 14px;
-  color: #95d5b2;
+  color: #27ae60;
   font-weight: 300;
 }
 
@@ -96,28 +96,28 @@ body {
 
 .input-field,
 .textarea-field {
-  background: rgba(26, 61, 40, 0.8);
-  border: 2px solid #52b788;
+  background: #f8fffe;
+  border: 2px solid #95d5b2;
   border-radius: 8px;
   padding: 12px 15px;
   font-family: 'Poppins', sans-serif;
   font-size: 14px;
-  color: #f0f0f0;
+  color: #1a1a1a;
   transition: all 0.3s ease;
   outline: none;
 }
 
 .input-field::placeholder,
 .textarea-field::placeholder {
-  color: #95d5b2;
+  color: #52b788;
   opacity: 0.7;
 }
 
 .input-field:focus,
 .textarea-field:focus {
-  border-color: #74c69d;
-  background: rgba(26, 61, 40, 1);
-  box-shadow: 0 0 10px rgba(116, 198, 157, 0.3);
+  border-color: #27ae60;
+  background: #ffffff;
+  box-shadow: 0 0 10px rgba(82, 183, 136, 0.3);
 }
 
 .textarea-field {
@@ -126,8 +126,8 @@ body {
 }
 
 .submit-btn {
-  background: linear-gradient(135deg, #52b788 0%, #74c69d 100%);
-  color: #0f2818;
+  background: linear-gradient(135deg, #52b788 0%, #27ae60 100%);
+  color: #ffffff;
   border: none;
   padding: 12px 20px;
   border-radius: 8px;
@@ -142,8 +142,8 @@ body {
 
 .submit-btn:hover {
   transform: translateY(-2px);
-  box-shadow: 0 8px 20px rgba(82, 183, 136, 0.5);
-  background: linear-gradient(135deg, #74c69d 0%, #52b788 100%);
+  box-shadow: 0 8px 20px rgba(82, 183, 136, 0.4);
+  background: linear-gradient(135deg, #27ae60 0%, #1e8449 100%);
 }
 
 .submit-btn:active {
@@ -174,11 +174,11 @@ body {
 }
 
 .feedback-list::-webkit-scrollbar-thumb:hover {
-  background: #74c69d;
+  background: #27ae60;
 }
 
 .feedback-item {
-  background: rgba(82, 183, 136, 0.1);
+  background: #f0f9f6;
   border-left: 4px solid #52b788;
   padding: 15px;
   border-radius: 8px;
@@ -186,26 +186,26 @@ body {
 }
 
 .feedback-item:hover {
-  background: rgba(82, 183, 136, 0.15);
-  border-left-color: #74c69d;
+  background: #e8f8f5;
+  border-left-color: #27ae60;
   transform: translateX(5px);
 }
 
 .feedback-item strong {
-  color: #74c69d;
+  color: #1e8449;
   font-size: 15px;
   display: block;
   margin-bottom: 8px;
 }
 
 .feedback-item {
-  color: #d9f3dd;
+  color: #1a1a1a;
   font-size: 14px;
   line-height: 1.5;
 }
 
 .footer {
-  background: rgba(15, 40, 24, 0.8);
+  background: #e8f8f5;
   padding: 25px 20px;
   text-align: center;
   border-top: 2px solid #52b788;
@@ -214,7 +214,7 @@ body {
 
 .footer p {
   font-size: 14px;
-  color: #95d5b2;
+  color: #27ae60;
   font-weight: 500;
   letter-spacing: 0.5px;
 }
