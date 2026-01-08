@@ -1,4 +1,4 @@
-const API_URL = "http://localhost:3000"; // backend URL
+const API_URL = "http://localhost:3000";
 
 function submitFeedback() {
   const name = document.getElementById("studentName").value;
@@ -11,13 +11,8 @@ function submitFeedback() {
 
   fetch(`${API_URL}/add-feedback`, {
     method: "POST",
-    headers: {
-      "Content-Type": "application/json"
-    },
-    body: JSON.stringify({
-      student_name: name,
-      message: message
-    })
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ student_name: name, message: message })
   })
   .then(res => res.json())
   .then(data => {
@@ -34,7 +29,6 @@ function loadFeedback() {
     .then(data => {
       const list = document.getElementById("feedbackList");
       list.innerHTML = "";
-
       data.forEach(item => {
         const div = document.createElement("div");
         div.className = "feedback-item";
@@ -44,5 +38,5 @@ function loadFeedback() {
     });
 }
 
-// Load feedback when page opens
+// Load feedback on page load
 loadFeedback();
